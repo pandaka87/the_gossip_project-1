@@ -17,6 +17,6 @@ Pour vous permettre d'apprécier le résultat final, voici les étapes :
 - Naviguer entre les différents onglets pour les tester
 
 ## Ce projet a été réalisé en équipe par:
-- [@GregoryLAIGNEAU](https://github.com/GregoryLAIGNEAU)]
+- [@GregoryLAIGNEAU](https://github.com/GregoryLAIGNEAU)
 - [@PierreAND](https://github.com/PierreAND)
 - [@pandaka87](https://github.com/pandaka87)
