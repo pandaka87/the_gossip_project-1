@@ -2,6 +2,11 @@
 <p><%= Gossip.find(params[:id]).title %></p>
 <p><%= Gossip.find(params[:id]).content %></p>
 <p><%= Gossip.find(params[:id]).created_at %></p>
-<p><%= User.find(@find_by_user_id).first_name %> <%= User.find(@find_by_user_id).last_name %></p>
+<%
+=begin%>
+ <p><%= User.find(@find_by_user_id).first_name %> <%= User.find(@find_by_user_id).last_name %></p> 
+<%
+=end%>
 
-<a href="/author/<%= @find_by_user_id %>">Author: <%= User.find(@find_by_user_id).last_name %></a><br>
+<p>Auteur : <a href="/author/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a><p>
+<%= link_to "Author", @author %>

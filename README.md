@@ -13,6 +13,7 @@ e 'apprécier le résultat final, voici les étapes :
     - Lancer le serveur ($ rails server)
     - Ouvrir http://localhost:3000 dans votre navigateur
     - Naviguer entre les différents onglets pour les tester
+
 ## Ce projet a été réalisé en équipe par
  :
     @GregoryLAIGNEAU
