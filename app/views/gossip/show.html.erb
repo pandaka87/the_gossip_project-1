@@ -1,12 +1,12 @@
-<h2>Gossip n° <%= params[:id].to_i %></h2>
-<p><%= Gossip.find(params[:id]).title %></p>
-<p><%= Gossip.find(params[:id]).content %></p>
-<p><%= Gossip.find(params[:id]).created_at %></p>
-<%
-=begin%>
- <p><%= User.find(@find_by_user_id).first_name %> <%= User.find(@find_by_user_id).last_name %></p> 
-<%
-=end%>
 
-<p>Auteur : <a href="/author/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a><p>
-<%= link_to "Author", @author %>
+
+<div class="card mb-3">
+<div class="card-body">
+
+<h6 class="card-subtitle mb-2">Gossip n° <%= params[:id].to_i %></h6>
+<h5 class="card-title"> <%= Gossip.find(params[:id]).title %></h5>
+<p class="card-text"><%= Gossip.find(params[:id]).content %></p>
+<p><%= Gossip.find(params[:id]).created_at %></p>
+
+<a href="#" class="badge badge-warning  ">Auteur : <a href="/author/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a><p>
+

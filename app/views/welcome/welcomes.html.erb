@@ -1,18 +1,16 @@
-# <p>
-# Bienvenue <%= @first_name %> ! Ici c'est notre super site de potins, il est chouette, non ?
-# </p>
-
 <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">BIENVENUE <%= params[:first_name] %> ! </h1>
-    <p class="lead">Ici c'est notre super site de potins, il est chouette, non ?</p>
-  </div>
+      <h1 class="display-4 text-center">BIENVENUE <%= params[:first_name] %> ! </h1>
+      <h2 class="lead text-center">Ici c'est notre super site de potins : il est chouette, non ?</h2>
+      <h3 class="lead text-center">Voici les derniers gossips en date :</h3>
 </div>
 
-<h2>Voici les derniers gossips en date :</h2>
-
-
+<div class="container-raw">
   <% @gossips.each do |gossip, id| %>
-  <p>Gossip n°<%= gossip.id %> - <%= gossip.title %> - <%= User.find(gossip.user_id).first_name %></p>
+<div class="cards-raw">
+  <p class="title-raw">Gossip n°<%= gossip.id %></p>
+  <p><strong>Titre</strong> : <%= gossip.title %></p>
+  <p><strong>Auteur</strong> : <%= User.find(gossip.user_id).first_name %></p>
   <a href="/gossip/<%=gossip.id%>">Voir le potin</a>
+</div>
   <% end %>
+</div>
