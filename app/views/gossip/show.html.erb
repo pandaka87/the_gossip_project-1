@@ -1,0 +1,23 @@
+<h2>Gossip n° <%= params[:id].to_i %></h2>
+<p><%= Gossip.find(params[:id]).title %></p>
+<p><%= Gossip.find(params[:id]).content %></p>
+<p><%= Gossip.find(params[:id]).created_at %></p>
+<p><%= User.find(@find_by_user_id).first_name %> <%= User.find(@find_by_user_id).last_name %></p>
+<p><%= User.find(@find_by_user_id).description %></p>
+<p><%= User.find(@find_by_user_id).email %></p>
+<p><%= User.find(@find_by_user_id).age %></p>
+<p><%= City.find(@find_by_city_id).name %></p>
+<%#
+Allez, dernier élément : la page qui affiche les potins. 
+Chaque potin en base doit avoir une page dédiée, 
+qui affiche les détails de son auteur (avec un lien pour aller sur la page de l'auteur), 
+
+User.find(Gossip.find(params[:id]).user_id).city_id
+
+1 = The Sun Also Rises > Anjanette  | Romaguera (user_id: 4)
+
+
+User.find(Gossip.user_id).first_name
+ Gossip.find(user_id: 4)
+
+%>

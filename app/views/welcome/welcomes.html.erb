@@ -1,0 +1,11 @@
+<p>
+Bienvenue <%= @first_name %> ! Ici c'est notre super site de potins, il est chouette, non ?
+</p>
+
+<h2>Voici les derniers gossips en date :</h2>
+
+
+  <% @gossips.each do |gossip, id| %>
+  <p>Gossip n°<%= gossip.id %> - <%= gossip.title %> - <%= User.find(gossip.user_id).first_name %></p>
+  <a href="/gossip/<%=gossip.id%>">Voir le potin</a> 
+  <% end %>
