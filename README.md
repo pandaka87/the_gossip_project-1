@@ -1,24 +1,20 @@
-# README
+# The Gossip Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Semaine 6 de The Hacking Project et nous voilà de nouveaux en train de faire avancer "The Gossip Project" !
 
-Things you may want to cover:
+## Versions
+- Ruby 2.7.4
+- Rails 5.2.8.1
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Comment visualiser le projet ?Pour vous permettre d
+e 'apprécier le résultat final, voici les étapes :
+    - Télécharger le repo
+    - Faire un "$ bundle install" dans la console
+    - Lancer le serveur ($ rails server)
+    - Ouvrir http://localhost:3000 dans votre navigateur
+    - Naviguer entre les différents onglets pour les tester
+## Ce projet a été réalisé en équipe par
+ :
+    @GregoryLAIGNEAU
+    @PierreAND
+    @pandaka87

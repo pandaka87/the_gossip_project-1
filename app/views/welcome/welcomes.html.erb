@@ -1,11 +1,18 @@
-<p>
-Bienvenue <%= @first_name %> ! Ici c'est notre super site de potins, il est chouette, non ?
-</p>
+# <p>
+# Bienvenue <%= @first_name %> ! Ici c'est notre super site de potins, il est chouette, non ?
+# </p>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">BIENVENUE <%= params[:first_name] %> ! </h1>
+    <p class="lead">Ici c'est notre super site de potins, il est chouette, non ?</p>
+  </div>
+</div>
 
 <h2>Voici les derniers gossips en date :</h2>
 
 
   <% @gossips.each do |gossip, id| %>
   <p>Gossip n°<%= gossip.id %> - <%= gossip.title %> - <%= User.find(gossip.user_id).first_name %></p>
-  <a href="/gossip/<%=gossip.id%>">Voir le potin</a> 
+  <a href="/gossip/<%=gossip.id%>">Voir le potin</a>
   <% end %>
