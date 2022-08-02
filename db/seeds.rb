@@ -32,9 +32,6 @@ require 'faker'
 # Générer 10 nouveaux tags (et les lier à des gossips)
 # Tag.destroy_all
 
-# 10.times do
-#   Tag.create!(title: Faker::Lorem.word)
-# end
 # => puis Gossip.all.each { |p| p.update(tag_id: rand(1..20)) } pour ajouter nos tags aux gossips déjà créés
 
 

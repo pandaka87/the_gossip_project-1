@@ -33,6 +33,47 @@
 }
 
 .title-raw {
-font-size: 25px;
-text-align: center;
+  font-size: 25px;
+  text-align: center;
+}
+
+.container-gossip-form {
+  display: flex;
+  justify-content: center;
+}
+
+.h2-centered {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.gossip-form {
+  width: 1000px;
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+
+.form-content {
+margin-top: 25px;
+}
+
+.button-gossip-form {
+  width: 100%;
+  background-color: blue;
+  border-radius: 7px;
+  border: 1px solid transparent;
+  color: white;
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 15px;
+}
+
+.button-gossip-form:hover {
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  transition: all .8s ease;
 }
