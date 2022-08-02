@@ -15,11 +15,13 @@
  */
 
  .container-raw {
-  width: 600px;
+  width: 1320px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 30px;
  }
 
  .cards-raw {
@@ -28,7 +30,6 @@
   width: 300px;
   padding: 25px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
-  margin: 30px 0;
 }
 
 .title-raw {
