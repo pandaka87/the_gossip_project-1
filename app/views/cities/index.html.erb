@@ -1,0 +1,10 @@
+<div class="container-raw">
+  <% @cities.each do |city| %>
+    <div class="cards-raw">
+      <p><strong>Ville</strong> : <%= city.name %></p>
+      
+      <p><strong>Potin</strong> : <%= User.find(city.id) %></p>
+    </div>
+  <% end %>
+  
+</div>

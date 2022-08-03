@@ -25,4 +25,28 @@ class GossipsController < ApplicationController
       render new_gossip_path
     end
   end
+
+  def edit
+    @gossip = Gossip.find(params[:id])
+  end 
+
+  def update
+    @gossip = Gossip.find(params[:id])
+
+    if @gossip.update(post_params)
+      redirect_to gossips_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+   @gossip = Gossip.find(params[:id])
+   @gossip.destroy
+   redirect_to gossips_path
+  end 
+  private
+    def post_params
+      post_params = params.require(:gossip).permit(:title, :content)
+    end
 end

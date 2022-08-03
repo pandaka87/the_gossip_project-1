@@ -8,12 +8,7 @@
 
 require 'faker'
 
-# Générer 10 nouveaux users
-# User.destroy_all
 
-# 10.times do
-#   User.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,description: Faker::Lorem.paragraph(sentence_count: 2),email: Faker::Internet.email,age: Faker::Number.number(digits: 2), city_id: City.all.shuffle.last.id)
-# end
 
 # Générer 10 nouvelles villes (liées à des users)
 # City.destroy_all
@@ -22,6 +17,17 @@ require 'faker'
 #   City.create!(name: Faker::Address.unique.city, zip_code: Faker::Address.unique.zip_code)
 # end
 
+
+
+# Générer 10 nouveaux users
+# User.destroy_all
+
+# 10.times do
+#   User.create!(first_name: Faker::Name.first_name,last_name: Faker::Name.last_name,description: Faker::Lorem.paragraph(sentence_count: 2),email: Faker::Internet.email,age: Faker::Number.number(digits: 2), city_id: City.all.shuffle.last.id)
+# end
+
+
+
 # Générer 20 nouveaux gossips (liées avec leur auteur = user)
 # Gossip.destroy_all 
 
@@ -29,10 +35,24 @@ require 'faker'
 #   Gossip.create!(title: Faker::Book.title,content: Faker::Quote.yoda, user_id: User.all.shuffle.last.id)
 # end
 
-# Générer 10 nouveaux tags (et les lier à des gossips)
+
+
+# Générer 10 nouveaux tags
 # Tag.destroy_all
 
-# => puis Gossip.all.each { |p| p.update(tag_id: rand(1..20)) } pour ajouter nos tags aux gossips déjà créés
+# 10.times do
+#   Tag.create(title: "##{Faker::Artist.unique.name}")
+# end
+
+# Générer les tag_id dans User
+# Gossip.all.each { |p| p.update(tag_id: rand(1..10)) }
+
+# Lier les tables tag et gossip dans tag_of_gossip
+for i in 1..20
+  rand(1..3).times do 
+    TagOfGossip.create(tag: Tag.all.sample, gossip_id: i)
+  end
+end
 
 
 # Générer 15 nouveaux private message (et les lier à 1 expéditeur chacun + 1 ou plusieurs destinataire(s))

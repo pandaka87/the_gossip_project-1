@@ -1,0 +1,46 @@
+<h1>Créer un utilisateur</h1>
+
+<%= form_for @user do |t| %>
+  <div class="form-group">
+    <label>Prénom</label>
+    <%= t.text_field :first_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label>Nom</label>
+    <%= t.text_field :last_name, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label>Description</label>
+    <%= t.text_field :description, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <%= t.text_field :email, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <label>Age</label>
+    <%= t.text_field :age, class: 'form-control' %>
+  </div>
+  <!-- 
+  <div class="form-group">
+    <label>City</label>
+    <%= t.text_field :city_id, class: 'form-control' %>
+  </div>
+  -->
+  <div class="form-group">
+    <label>City</label>
+    <%= t.select(:city_id, options_for_select([['TEST', '4'], ['YES', 'YES']])) %>
+  </div>
+  <div class="form-group">
+    <button type="submit">Ajouter</button>
+  </div>
+<% end %>
+
+<% if @user.errors.any? %>
+  <p>Nous n'avons pas réussi à créer le potin pour la (ou les) raison(s) suivante(s) :</p>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
