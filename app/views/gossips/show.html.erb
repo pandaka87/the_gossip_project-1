@@ -6,5 +6,7 @@
 <p class="card-text"><%= Gossip.find(params[:id]).content %></p>
 <p><%= Gossip.find(params[:id]).created_at %></p>
 
-<a href="#" class="badge badge-warning  ">Auteur : <a href="/author/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a><p>
-
+<p>Auteur : <a href="/author/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a><p>
+<p>Ville : <a href="/city/<%= @find_by_city_id %>"><%= City.find(@find_by_city_id).name %></a><p>
+</div>
+</div>
