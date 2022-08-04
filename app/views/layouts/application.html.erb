@@ -30,9 +30,20 @@
               <%= link_to 'Contact', '/contact', class: 'nav-link' %>
             </li>
           </ul>
-          <div class="nav-item justify-content-end">
-            <%= link_to "S'inscrire / Se connecter", '/users/new', class: 'btn btn-outline-light' %>
-            <%= link_to "Se déconnecter", session_path(session.id), method: :delete, class: 'btn btn-outline-light' %>
+          <div class="nav-item">
+            <% if logged_in? %>
+              <%= link_to "Se déconnecter", session_path(session.id), method: :delete, class: 'btn btn-outline-light' %>
+            <% else %>
+                <div class="dropdown">
+                  <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    Se connecter / S'inscrire
+                  </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="/users/new">S'inscrire</a></li>
+                      <li><a class="dropdown-item" href="/sessions/new">Se connecter</a></li>
+                    </ul>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
