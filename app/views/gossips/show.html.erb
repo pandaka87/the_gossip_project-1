@@ -9,12 +9,10 @@
       <li class="list-group-item"><p><strong>Ville</strong> : <a href="/cities/<%= @find_by_city_id %>"><%= City.find(@find_by_city_id).name %></a><p></li>
     </ul>
     <div>
-      <%= link_to "Un petit commentaire ?", new_comment_path, class: 'btn btn-secondary ' %>
-    </div>
-    <div>
       <% if logged_in? %>
         <%= link_to "Editer ce potin", edit_gossip_path, class: 'btn btn-secondary' %>
         <%= link_to "Supprimer ce potin", gossip_path, method: :delete, class: 'btn btn-secondary' %>
+        <%= link_to "Un petit commentaire ?", new_comment_path, class: 'btn btn-secondary ' %>
       <% else %>
       <% end %>
     </div>
