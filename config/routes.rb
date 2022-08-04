@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   resources :gossips
   resources :users
   resources :cities
+  resources :sessions, only: [:new,:create,:destroy]
 end
