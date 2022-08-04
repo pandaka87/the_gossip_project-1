@@ -1,5 +1,5 @@
 <div class="jumbotron jumbotron-fluid">
-      <h1 class="display-4 text-center">BIENVENUE <%= params[:first_name] %> ! </h1>
+      <h1 class="display-4 text-center">Bienvenue <%= User.find(params[:id]).first_name %> ! </h1>
       <h2 class="lead text-center">Ici c'est notre super site de potins : il est chouette, non ?</h2>
       <h3 class="lead text-center">Voici les derniers gossips en date :</h3>
 </div>

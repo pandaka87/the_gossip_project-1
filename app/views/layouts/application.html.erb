@@ -30,13 +30,17 @@
               <%= link_to 'Contact', '/contact', class: 'nav-link' %>
             </li>
           </ul>
+          <div class="nav-item justify-content-end">
+            <%= link_to "S'inscrire", '/users/new', class: 'btn btn-outline-light' %>
+            <%= link_to "Se déconnecter", session_path(session.id), method: :delete, class: 'btn btn-outline-light' %>
+          </div>
         </div>
       </div>
     </nav>
     <%= yield %>
     <footer class="bg-light text-center text-lg-start">
       <div class="text-center p-3">
-        <p>© 2022 Copyright:</p>
+        <p>© 2022 Copyright - THP - Eté 2022</p>
       </div>
     </footer>
     <!-- JavaScript Bundle with Popper -->
