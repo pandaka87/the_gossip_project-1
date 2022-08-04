@@ -1,0 +1,17 @@
+<div class="container-fluid d-flex justify-content-center">
+  <div class="card" style="width: 18rem;">
+    <img src="https://www.justswim.in/images/dummy-img.jpg" class="card-img-top" alt="profil">
+    <div class="card-body">
+      <h5 class="card-title text-center"><%= current_user.first_name %> <%= current_user.last_name %></h5>
+      <p class="card-text"><%= current_user.description %></p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><%= current_user.age %> ans</li>
+      <li class="list-group-item"><%= City.find(current_user.city_id).name %></li>
+      <li class="list-group-item"><%= current_user.email %></li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Tous mes gossips</a>
+    </div>
+  </div>
+</div>

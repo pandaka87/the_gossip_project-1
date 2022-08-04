@@ -5,8 +5,11 @@
   <p><strong>Titre</strong> : <%= gossip.title %></p>
   <p><strong>Auteur</strong> : <%= User.find(gossip.user_id).first_name %></p>
   <a href="/gossips/<%=gossip.id%>">Voir le potin</a>
-  <a href="/gossips/new">Créer un potin</a>
-  <a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger" data-confirm= "sur?" data-method="DELETE">Supprimer</a>
+    <%
+=begin%>
+ <a href="<%= gossip_path(gossip.id)%>" class="btn btn-danger" data-confirm= "sur?" data-method="DELETE">Supprimer</a> 
+<%
+=end%>
 </div>
   <% end %>
 </div>

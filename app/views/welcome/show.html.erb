@@ -1,7 +1,13 @@
 <div class="jumbotron jumbotron-fluid">
-      <h1 class="display-4 text-center">Bienvenue <%= User.find(params[:id]).first_name %> ! </h1>
+      <h1 class="display-4 text-center">Bienvenue <%= current_user.first_name %> ! </h1>
       <h2 class="lead text-center">Ici c'est notre super site de potins : il est chouette, non ?</h2>
-      <h3 class="lead text-center">Voici les derniers gossips en date :</h3>
+</div>
+
+<div class="container-fluid d-flex justify-content-center">
+  <h3 class="lead text-center">Voici les derniers gossips en date :</h3>
+</div>
+<div class="container-fluid d-flex justify-content-center">
+  <%= link_to "Publier un nouveau potin", '/gossips/new', class: 'btn btn-warning' %>
 </div>
 
 <div class="container-raw">
@@ -11,7 +17,7 @@
   <p><strong>Titre</strong> : <%= gossip.title %></p>
   <p><strong>Auteur</strong> : <%= User.find(gossip.user_id).first_name %></p>
   <a href="/gossips/<%=gossip.id%>">Voir le potin</a>
-  <a href="/gossips/new">Créer un potin</a>
 </div>
   <% end %>
 </div>
+

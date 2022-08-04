@@ -4,6 +4,7 @@ class User < ApplicationRecord
   # validates :description, presence: true, length: { maximum: 150 }
   # validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@([^@\s]+.)+[^@\s]+\z/, message: 'Please, enter a valid email address' }
   # validates :age, presence: true, numericality: { only_integer: true }
+  # validates :password, presence: true, length: {in: 6..20}
   belongs_to :city
   has_many :gossips
   has_many :sent_messages, foreign_key: 'sender_id', class_name: 'PrivateMessage'

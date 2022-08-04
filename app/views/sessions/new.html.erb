@@ -1,16 +1,20 @@
-<h1>Connexion</h1>
+<div class= 'container-fluid text-center'>
+  <h1>Connexion</h1>
+</div>
 
 <%= form_with url:sessions_path do |form|%>
-  <div class= 'container-fluid justify-content-center'>
+  <div class= 'container justify-content-center'>
     <div class="mb-3">
       <%= form.label :email %>
       <%= form.text_field :email, class: 'form-control' %>
     </div>
     <div class="mb-3">
       <%= form.label :password %>
-      <%= form.text_field :password, class: 'form-control' %>
+      <%= form.password_field :password, class: 'form-control' %>
     </div>
-    <%= form.submit "Se connecter", class: 'btn btn-primary' %>
+    <div class="container-fluid d-flex justify-content-center">
+      <%= form.submit "Se connecter", class: 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>
 

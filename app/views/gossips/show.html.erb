@@ -1,12 +1,12 @@
-<div class="card mb-3">
-<div class="card-body">
-
-<h6 class="card-subtitle mb-2">Gossip n° <%= params[:id].to_i %></h6>
-<h5 class="card-title"> <%= Gossip.find(params[:id]).title %></h5>
-<p class="card-text"><%= Gossip.find(params[:id]).content %></p>
-<p><%= Gossip.find(params[:id]).created_at %></p>
-
-<p>Auteur : <a href="/users/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a><p>
-<p>Ville : <a href="/cities/<%= @find_by_city_id %>"><%= City.find(@find_by_city_id).name %></a><p>
+<div class="container-raw">
+<div class="cards-raw">
+  <h5 class="card-title text-center">Gossip n° <%= params[:id].to_i %></h5>
+  <p><strong>Titre</strong> : <%= Gossip.find(params[:id]).title %></p>
+  <p><%= Gossip.find(params[:id]).content %></p>
+  <p><%= Gossip.find(params[:id]).created_at %></p>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><strong>Auteur</strong> : <a href="/users/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a></li>
+    <li class="list-group-item"><p><strong>Ville</strong> : <a href="/cities/<%= @find_by_city_id %>"><%= City.find(@find_by_city_id).name %></a><p></li>
+  </ul>
 </div>
 </div>

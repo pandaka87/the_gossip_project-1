@@ -1,2 +1,9 @@
-<h1>Cities#show</h1>
-<p>Find me in app/views/cities/show.html.erb</p>
+<div class="container-fluid d-flex justify-content-center">
+  <div class="card" style="width: 18rem;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcQN-kWab9k-fu189OijBZrTKYmvfVN6iiGr3rrVlNz-Kw9Knd21QONLhw-VF2s9qmtzg&usqp=CAU" class="card-img-top" alt="profil">
+    <div class="card-body">
+      <h5 class="card-title text-center"><%= City.find(params[:id]).name %></h5>
+      <p><strong>Code postal</strong> : <%= City.find(params[:id]).zip_code %></p>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
-  
   def index
     @users = User.all
   end
 
   def show
-    def show
-      @user = User.find(params[:id])
-    end
+    @user = User.find(params[:id])
   end
 
   def new
@@ -15,15 +12,8 @@ class UsersController < ApplicationController
   end
   
   def create
-    user = User.create(post_params)
-    # @user = User.new('first_name' => params[:first_name], 'last_name' => params[:last_name],'description' => params[:description])
-    # if @user.save
-      # redirect_to user_path(user.id)
-    # else
-    #   redirect_to users_path
-    # end   
     if User.create(post_params)
-      redirect_to users_path
+      redirect_to welcome_path(session.id)
     else
       render :new
     end
@@ -42,6 +32,6 @@ class UsersController < ApplicationController
   private
 
   def post_params
-    post_params = params.require(:user).permit(:first_name, :last_name, :description, :email, :age, :city_id)
+    post_params = params.require(:user).permit(:first_name, :last_name, :description, :email, :age, :password, :city_id)
   end
 end

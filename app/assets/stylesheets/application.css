@@ -13,7 +13,10 @@
  *= require_tree .
  *= require_self
  */
-
+#alert {
+  width: 500px;
+  height: 100px;
+}
   /* .header-background {
     background: url("https://images.pexels.com/photos/6147394/pexels-photo-6147394.jpeg");
     height: 700px;

@@ -14,12 +14,11 @@ class GossipsController < ApplicationController
   end
 
   def create
-    anonymous_user = User.find_by(first_name: 'Anonymous')
-    @gossip = Gossip.new('title' => params[:title], 'content' => params[:content], user: anonymous_user)
-    
+    @gossip = Gossip.new('title' => params[:title], 'content' => params[:content])
+    @gossip.user = current_user
 
     if @gossip.save
-      redirect_to gossips_path
+      redirect_to welcome_path(session.id)
 
     else
       render new_gossip_path
