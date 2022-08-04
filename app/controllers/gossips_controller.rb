@@ -1,5 +1,6 @@
 class GossipsController < ApplicationController
   before_action :authenticate_user, only: [:new]
+  # before_action :authenticate_author, only: [:edit, :update, :destroy]
 
   def index
     @gossips = Gossip.all
@@ -58,4 +59,11 @@ class GossipsController < ApplicationController
         redirect_to new_session_path
       end
     end
+
+    # def authenticate_author
+    #   unless current_user != @gossip.user(id)
+    #     flash[:danger] = "Vous n'êtes pas l'auteur de cette publication, vous n'avez pas les droits."
+    #     redirect_to new_session_path
+    #   end
+    # end
 end

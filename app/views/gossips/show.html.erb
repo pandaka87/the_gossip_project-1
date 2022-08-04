@@ -8,5 +8,12 @@
     <li class="list-group-item"><strong>Auteur</strong> : <a href="/users/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a></li>
     <li class="list-group-item"><p><strong>Ville</strong> : <a href="/cities/<%= @find_by_city_id %>"><%= City.find(@find_by_city_id).name %></a><p></li>
   </ul>
+  <div>
+    <% if logged_in? %>
+      <%= link_to "Editer ce potin", edit_gossip_path, class: 'btn btn-secondary' %>
+      <%= link_to "Supprimer ce potin", gossip_path, method: :delete, class: 'btn btn-secondary' %>
+    <% else %>
+    <% end %>
+  </div>
 </div>
 </div>
