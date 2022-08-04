@@ -1,19 +1,22 @@
 <div class="container-raw">
-<div class="cards-raw">
-  <h5 class="card-title text-center">Gossip n° <%= params[:id].to_i %></h5>
-  <p><strong>Titre</strong> : <%= Gossip.find(params[:id]).title %></p>
-  <p><%= Gossip.find(params[:id]).content %></p>
-  <p><%= Gossip.find(params[:id]).created_at %></p>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item"><strong>Auteur</strong> : <a href="/users/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a></li>
-    <li class="list-group-item"><p><strong>Ville</strong> : <a href="/cities/<%= @find_by_city_id %>"><%= City.find(@find_by_city_id).name %></a><p></li>
-  </ul>
-  <div>
-    <% if logged_in? %>
-      <%= link_to "Editer ce potin", edit_gossip_path, class: 'btn btn-secondary' %>
-      <%= link_to "Supprimer ce potin", gossip_path, method: :delete, class: 'btn btn-secondary' %>
-    <% else %>
-    <% end %>
+  <div class="cards-raw">
+    <h5 class="card-title text-center">Gossip n° <%= params[:id].to_i %></h5>
+    <p><strong>Titre</strong> : <%= Gossip.find(params[:id]).title %></p>
+    <p><%= Gossip.find(params[:id]).content %></p>
+    <p><%= Gossip.find(params[:id]).created_at %></p>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Auteur</strong> : <a href="/users/<%= @find_by_user_id %>"><%= User.find(@find_by_user_id).first_name %></a></li>
+      <li class="list-group-item"><p><strong>Ville</strong> : <a href="/cities/<%= @find_by_city_id %>"><%= City.find(@find_by_city_id).name %></a><p></li>
+    </ul>
+    <div>
+      <%= link_to "Un petit commentaire ?", new_comment_path, class: 'btn btn-secondary ' %>
+    </div>
+    <div>
+      <% if logged_in? %>
+        <%= link_to "Editer ce potin", edit_gossip_path, class: 'btn btn-secondary' %>
+        <%= link_to "Supprimer ce potin", gossip_path, method: :delete, class: 'btn btn-secondary' %>
+      <% else %>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>

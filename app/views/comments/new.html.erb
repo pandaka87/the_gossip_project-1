@@ -1,6 +1,12 @@
 
-    <h1>Créer ton commentaire</h1>
-    
+    <h1>Créé ton commentaire</h1>
+    <%= form_tag url_for(action: 'create'), method: 'post' %>
+      <%= label_tag 'Commentaire : ' %>
+      <%= text_area_tag 'content', @comment%> 
+      <br/> <br/>
+      <%= submit_tag "Envoyer mon commentaire", class: "btn btn-secondary" %>
 
-  
-  <br/> <br/>
+
+      
+
+

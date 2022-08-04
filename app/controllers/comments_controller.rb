@@ -10,14 +10,29 @@ class CommentsController < ApplicationController
   def new
 
   end
-
+  
   def create
-  if Comment.create(post_params)
-    redirect_to gossips_path
-  else 
-    render :new
+    @comment = Comment.new('gossip_id'=> params[:gossip_id], 'content'=> params[:content], user_id: current_user)
+    if @comment.save
+      flash[:success] = "Commentaire envoyé!"
+      redirect_to gossips_path
+    else
+      render :new
+    end
   end
 
+
+
+
+
+
+  # def create
+  #   if Comment.create(post_params)
+  #       redirect_to gossips_path
+  #   else 
+  #       render :new
+  #   end
+  # end
   def update
 
   end
@@ -28,8 +43,8 @@ class CommentsController < ApplicationController
 
   end
 
-  private
-  def post_params
-    post_params = params.require(:comment).permit(:gossip_id, :content, :user_id)
-  end
+  # private
+  # def post_params
+  #   post_params = params.require(:comment).permit(:gossip_id, :content, :user_id)
+  # end
 end
