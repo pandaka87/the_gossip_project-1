@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: "welcome#index"
   resources :welcome, only: [:show,:index]
   resources :team, only: [:index]
   resources :contact, only: [:index]
